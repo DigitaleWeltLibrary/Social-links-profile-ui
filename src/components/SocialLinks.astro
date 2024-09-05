@@ -1,0 +1,32 @@
+---
+const { links } = Astro.props;
+---
+
+<article>
+  {links.map(([linktext, url], index) => <a href={url}>{linktext}</a>)}
+</article>
+
+<style lang="scss">
+  article {
+    a {
+      display: block;
+      width: calc(100% - 2rem);
+      padding: 1rem;
+      background: hsl(0, 0%, 36%);
+      border-radius: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      transition: 500ms all;
+      &:hover {
+        background: hsla(0, 0%, 36%, 0.552);
+      }
+
+      & + a {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+</style>
